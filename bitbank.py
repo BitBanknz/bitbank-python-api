@@ -24,7 +24,7 @@ class BitBank(object):
 
     def fetch_all_pairs(self):
         """
-        :return: pairToFeaturesets a map of currency pairs to the most up to date featureset for that pair
+        :return: pair_to_featuresets a map of currency pairs to the most up to date featureset for that pair
         """
         try:
             request = requests.get('https://bitbank.nz/api/forecasts?secret=' + self.api_key)
@@ -32,10 +32,10 @@ class BitBank(object):
             if request.status_code != 200:
                 print("request error code: {}, {}".format(request.status_code, request.text))
             featuresets = request.json()['results']
-            pairToFeaturesets = {}
+            pair_to_featuresets = {}
             for featureset in featuresets:
-                pairToFeaturesets[featureset['currency_pair']] = featureset
-            return pairToFeaturesets
+                pair_to_featuresets[featureset['currency_pair']] = featureset
+            return pair_to_featuresets
         except Exception as e:
             print(e)
             return None
