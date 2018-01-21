@@ -1,5 +1,4 @@
-import bitbank
-
+from bitbank import bitbank
 
 def test_fetch_pair():
     bitbank_api = bitbank.BitBank('TEST_API_KEY')

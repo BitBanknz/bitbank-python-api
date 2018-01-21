@@ -8,7 +8,12 @@ See api docs at https://BitBank.nz/api
 ### Example usage
 
 ```
+pip install bitbank
 
+from bitbank import bitbank
+```
+
+```
 bitbank_api = bitbank.BitBank('TEST_API_KEY')
 pair = 'USDT_BTC'
 
